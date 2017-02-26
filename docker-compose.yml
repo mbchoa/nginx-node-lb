@@ -1,0 +1,18 @@
+version: '2'
+services:
+    nginx:
+        image: mbchoa/nginx
+        ports:
+            - "80:80"
+    node1:
+        image: mbchoa/node
+        ports:
+            - "8080"
+    node2:
+        image: mbchoa/node
+        ports:
+            - "8080"
+    node3:
+        image: mbchoa/node
+        ports:
+            - "8080"
