@@ -11,6 +11,9 @@ This branch is focused on dockerizing the existing app.  It should be seen as an
     - Run `docker build -t username/nginx -f Dockerfile_nginx .` to create NGINX image
     - Replace username with your own username.  This is just a convention you can tag the image with any name you want
 3. Run `docker-compose up` and you're done!  You've effectively brought up 4 containers: 3 identical Node.js containers and 1 NGINX container which handles load balancing the 3 Node.js servers.
+4. Navigate to `http://localhost` and refresh the page a few times.
+
+You should see a welcome message with a unique ID sent back from the Node server on each page refresh.  If everything is running correctly, you should see the unique ID changing on each reload of the page.  A random UUID is generated when the Node servers are instantiated and sends back this ID along with the message when the '/' route is hit.  This is a quick way for us to verify that the NGINX load balancer is working properly.
 
 # Resources
 - Install Docker [https://www.docker.com/products/docker#/mac](https://www.docker.com/products/docker#/mac)
